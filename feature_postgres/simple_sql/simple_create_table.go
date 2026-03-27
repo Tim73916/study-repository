@@ -19,7 +19,7 @@ func CreateTable(ctx context.Context, conn *pgx.Conn) error {
 		UNIQUE(title)
 	);
 	`
-	
+
 	_, err := conn.Exec(ctx, sqlQuery)
 
 	return err

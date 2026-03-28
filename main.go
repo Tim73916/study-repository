@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	simple_connection "study/feature_postgres"
+	simple_connection "study/feature_postgres/simple_connection"
 	"study/feature_postgres/simple_sql"
 	"time"
 )
@@ -13,6 +13,7 @@ func main() {
 	ctx := context.Background()
 
 	conn, err := simple_connection.CreateConnection(ctx)
+
 	if err != nil {
 		panic(err)
 	}
@@ -22,6 +23,7 @@ func main() {
 	}
 
 	tasks, err := simple_sql.SelectRows(ctx, conn)
+
 	if err != nil {
 		panic(err)
 	}
